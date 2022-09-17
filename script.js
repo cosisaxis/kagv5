@@ -6,6 +6,12 @@ menu.onclick = () =>{
   navbar.classList.toggle('active');
 }
 
+let themeToggler = document.querySelector('.theme-toggler');
+let toggleBtn = document.querySelector('.toggle-btn');
+
+toggleBtn.onclick = () =>{
+  themeToggler.classList.toggle('active');
+}
 
 window.onscroll = () =>{
   menu.classList.remove('fa-times');
@@ -13,7 +19,14 @@ window.onscroll = () =>{
   themeToggler.classList.remove('active');
 }
 
+document.querySelectorAll('.theme-toggler .theme-btn').forEach(btn =>{
+  
+  btn.onclick = () =>{
+    let color = btn.style.background;
+    document.querySelector(':root').style.setProperty('--main-color', color);
+  }
 
+});
 
 var swiper = new Swiper(".home-slider", {
   effect: "coverflow",
@@ -24,14 +37,34 @@ var swiper = new Swiper(".home-slider", {
     rotate: 0,
     stretch: 0,
     depth: 100,
-    modifier: 2,
+    modifier: 0,
     slideShadows: true,
   },
   loop:true,
   autoplay:{
-    delay: 1000,
+    delay: 3000,
     disableOnInteraction:false,
   }
 });
 
-
+var swiper = new Swiper(".review-slider", {
+    slidesPerView: 1,
+    grabCursor: true,
+    loop:true,
+    spaceBetween: 10,
+    breakpoints: {
+      0: {
+          slidesPerView: 1,
+      },
+      700: {
+        slidesPerView: 2,
+      },
+      1050: {
+        slidesPerView: 3,
+      },    
+    },
+    autoplay:{
+      delay: 5000,
+      disableOnInteraction:false,
+  }
+});
