@@ -28,43 +28,74 @@ document.querySelectorAll('.theme-toggler .theme-btn').forEach(btn =>{
 
 });
 
-var swiper = new Swiper(".home-slider", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 100,
-    modifier: 0,
-    slideShadows: true,
-  },
-  loop:true,
-  autoplay:{
-    delay: 3000,
-    disableOnInteraction:false,
-  }
-});
+// var swiper = new Swiper(".home-slider", {
+//   effect: "coverflow",
+//   grabCursor: true,
+//   centeredSlides: true,
+//   slidesPerView: "auto",
+//   coverflowEffect: {
+//     rotate: 0,
+//     stretch: 0,
+//     depth: 100,
+//     modifier: 0,
+//     slideShadows: true,
+//   },
+//   loop:true,
+//   autoplay:{
+//     delay: 3000,
+//     disableOnInteraction:false,
+//   }
+// });
 
-var swiper = new Swiper(".review-slider", {
-    slidesPerView: 1,
-    grabCursor: true,
-    loop:true,
-    spaceBetween: 10,
-    breakpoints: {
+// var swiper = new Swiper(".review-slider", {
+//     slidesPerView: 1,
+//     grabCursor: true,
+//     loop:true,
+//     spaceBetween: 10,
+//     breakpoints: {
+//       0: {
+//           slidesPerView: 1,
+//       },
+//       700: {
+//         slidesPerView: 2,
+//       },
+//       1050: {
+//         slidesPerView: 3,
+//       },    
+//     },
+//     autoplay:{
+//       delay: 5000,
+//       disableOnInteraction:false,
+//   }
+// });
+
+ 
+var swiper = new Swiper(".slide-content", {
+  slidesPerView: 3,
+  spaceBetween: 25,
+  loop: true,
+  centerSlide: 'true',
+  fade: 'true',
+  grabCursor: 'true',
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints:{
       0: {
           slidesPerView: 1,
       },
-      700: {
-        slidesPerView: 2,
+      520: {
+          slidesPerView: 2,
       },
-      1050: {
-        slidesPerView: 3,
-      },    
-    },
-    autoplay:{
-      delay: 5000,
-      disableOnInteraction:false,
-  }
+      950: {
+          slidesPerView: 3,
+      },
+  },
 });
